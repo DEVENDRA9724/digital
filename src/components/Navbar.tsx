@@ -44,12 +44,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavClick, onOpenBooking }) => 
           {/* LEFT: Logo + Nav links */}
           <div className="flex items-center gap-3 sm:gap-4 pl-1">
             {/* Logo */}
-            <button 
-              onClick={() => onNavClick('hero')}
-              className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-900 rounded-full flex items-center justify-center text-white text-[10px] sm:text-[11px] font-bold tracking-tight cursor-pointer hover:scale-95 transition-transform"
-            >
-              AX
-            </button>
+            <div className="flex items-center gap-2">
+              <button 
+                onClick={() => onNavClick('hero')}
+                className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-900 rounded-full flex items-center justify-center text-white text-[10px] sm:text-[11px] font-bold tracking-tight cursor-pointer hover:scale-95 transition-transform shrink-0"
+              >
+                AX
+              </button>
+              <div className="h-4 w-[1px] bg-gray-250 hidden md:block"></div>
+              <span className="text-[10px] uppercase font-bold tracking-widest text-[#F26522] hidden md:block">
+                Lead With Nikki
+              </span>
+            </div>
             {/* Desktop Nav Links */}
             <div className="hidden lg:flex items-center gap-6 ml-2">
               {navLinks.map((link) => (

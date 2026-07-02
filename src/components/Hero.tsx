@@ -59,8 +59,10 @@ export const Hero: React.FC<HeroProps> = ({ onStartProject }) => {
       <div className="relative z-20 max-w-[1440px] mx-auto w-full px-5 sm:px-8 lg:px-12 pb-14 sm:pb-16 lg:pb-20 pointer-events-none">
         
         {/* Label */}
-        <span className="text-[13px] sm:text-[14px] text-gray-900 tracking-wide font-medium block mb-5 sm:mb-8 opacity-80 uppercase">
-          Axion Studio
+        <span className="text-[13px] sm:text-[14px] text-gray-900 tracking-wide font-medium block mb-5 sm:mb-8 opacity-85 uppercase flex items-center gap-2">
+          <span>Axion Studio</span>
+          <span className="text-gray-300">|</span>
+          <span className="text-[#F26522] font-semibold">Lead With Nikki</span>
         </span>
 
         {/* Headline */}
