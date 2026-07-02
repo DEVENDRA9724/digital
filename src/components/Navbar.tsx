@@ -8,18 +8,18 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ onNavClick, onOpenBooking }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [londonTime, setLondonTime] = useState<string>('');
+  const [localTime, setLocalTime] = useState<string>('');
 
-  // Track live London time
+  // Track live India (Ahmedabad) time
   useEffect(() => {
     const updateTime = () => {
-      const timeStr = new Date().toLocaleTimeString('en-GB', {
-        timeZone: 'Europe/London',
+      const timeStr = new Date().toLocaleTimeString('en-US', {
+        timeZone: 'Asia/Kolkata',
         hour: '2-digit',
         minute: '2-digit',
-        hour12: false,
+        hour12: true,
       });
-      setLondonTime(timeStr);
+      setLocalTime(timeStr);
     };
 
     updateTime();
@@ -68,11 +68,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavClick, onOpenBooking }) => 
           <div className="flex items-center gap-4">
             
             {/* Desktop Details */}
-            <div className="hidden lg:flex items-center gap-4 text-[13px] text-gray-600">
-              <span className="hidden xl:inline">Taking on projects for Q1 2026</span>
-              <div className="flex items-center gap-1.5 bg-gray-50 px-3 py-1.5 rounded-full border border-gray-100">
+            <div className="hidden lg:flex items-center gap-3 text-[13px] text-gray-600">
+              <span className="hidden xl:inline bg-gray-50 border border-gray-150 px-3 py-1 rounded-full text-xs font-semibold text-gray-800">
+                Founder: Nikita Tejwani
+              </span>
+              <div className="flex items-center gap-2 bg-gray-50/80 px-3 py-1.5 rounded-full border border-gray-100 shadow-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                 <Clock className="w-3.5 h-3.5 text-gray-500" />
-                <span className="font-mono">{londonTime} in London</span>
+                <span className="font-mono text-gray-800 font-semibold">{localTime} in India</span>
               </div>
             </div>
 
@@ -120,12 +123,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavClick, onOpenBooking }) => 
             
             {/* Sheet Header */}
             <div className="flex justify-between items-center pb-4 border-b border-gray-100">
-              <span className="text-[10px] uppercase font-bold tracking-widest text-gray-400">
+              <span className="text-[10px] uppercase font-bold tracking-widest text-[#F26522]">
                 Menu
               </span>
-              <div className="flex items-center gap-1.5 text-xs text-gray-500 font-mono">
-                <Clock className="w-3.5 h-3.5" />
-                <span>{londonTime} London</span>
+              <div className="flex items-center gap-2 text-xs text-gray-700 font-mono font-semibold">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <Clock className="w-3.5 h-3.5 text-gray-400" />
+                <span>{localTime} India</span>
               </div>
             </div>
 
