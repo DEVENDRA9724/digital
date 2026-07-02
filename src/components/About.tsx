@@ -67,7 +67,7 @@ export const About: React.FC<AboutProps> = ({ onAboutClick }) => {
           1
         </div>
         <span className="text-[12px] sm:text-[13px] font-medium border border-gray-200 rounded-full px-3 sm:px-4 py-1 sm:py-1.5 text-gray-900 bg-white shadow-sm">
-          Introducing Axion × Lead With Nikki
+          Introducing Lead With Nikki
         </span>
       </div>
 

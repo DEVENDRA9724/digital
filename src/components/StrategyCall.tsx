@@ -198,7 +198,7 @@ export const StrategyCall: React.FC = () => {
                     id="company"
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    placeholder="e.g. Axion Marketing Ltd."
+                    placeholder="e.g. Lead With Nikki Ltd."
                     className="w-full border border-gray-200 focus:border-[#F26522] rounded-xl px-4 py-3 text-xs outline-none bg-white text-gray-900 placeholder-gray-400 transition-all shadow-sm"
                   />
                 </div>
